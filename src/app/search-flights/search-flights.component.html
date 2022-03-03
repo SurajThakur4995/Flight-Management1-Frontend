@@ -1,0 +1,53 @@
+<p>search-flights works!</p>
+
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" >Navbar</a>
+  <button  class="btn btn-dark" routerLink="/search-flights" routerLinkActive="active">Search Flights</button>
+  <button  class="btn btn-dark" routerLink="/book-flight" routerLinkActive="active">Book Flight</button>
+  <button  class="btn btn-dark" routerLink="/manage-bookings" routerLinkActive="active">Manage Bookings</button>
+  <button  class="btn btn-danger" routerLink="/login" routerLinkActive="active">Logout</button>
+
+</nav><br><br><br>
+
+
+<div class="container">
+
+    <input class="form-control form-control-sm" type="text" [(ngModel)]="userFlightRequest.date" placeholder="date"><br>
+    <input class="form-control form-control-sm" type="text" [(ngModel)]="userFlightRequest.fromPlace" placeholder="fromPlace"><br>
+    <input class="form-control form-control-sm" type="text" [(ngModel)]="userFlightRequest.toPlace" placeholder="toPlace"><br>
+    <input class="form-control form-control-sm" type="text" [(ngModel)]="userFlightRequest.roundTrip" placeholder="roundTrip"><br>
+    <input class="form-control form-control-sm" type="text" [(ngModel)]="userFlightRequest.oneWayTrip" placeholder="oneWayTrip"><br>
+   
+    <button (click)="searchFlight()" class="btn btn-success">search-flight</button><br><br>
+
+   
+
+</div>
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+          
+          
+          <th scope="col">Date</th>
+          <th scope="col">flightId</th>
+          <th scope="col">flightName</th>
+          <th scope="col">flightPrice</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor="let f of data">
+  
+         
+          <td>{{f.date}}</td>
+          <td>{{f.flightId}}</td>
+          <td>{{f.flightName}}</td>
+          <td>{{f.flightPrice}}</td>
+          <td><button routerLink="/book-flight" [state]="f" class="btn btn-primary">Book Flight</button></td>
+    
+        </tr>
+      
+      </tbody>
+    
+</table>

@@ -1,0 +1,66 @@
+<p>manage-airlines works!</p>
+
+<!-- <button (click)="getAllFlightDetails()">getAllFlightDetails</button><br> -->
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" >Navbar</a>
+  <button  class="btn btn-dark" routerLink="/manage-airlines" routerLinkActive="active">manage-airlines</button>
+  <button  class="btn btn-dark" routerLink="/flight-schedule" routerLinkActive="active">Schedule new airline</button>
+  <button  class="btn btn-danger" routerLink="/login" routerLinkActive="active">Logout</button>
+
+</nav><br><br><br>
+
+
+<div class="container">
+<table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">flightNo</th>
+        <th scope="col">airline</th>
+        <th scope="col">fromPlace</th>
+        <th scope="col">toPlace</th>
+        <th scope="col">startDate</th>
+        <th scope="col">endDate</th>
+        <th scope="col">scheduledDays</th>
+        <th scope="col">instrument</th>
+        <!-- <th scope="col">noOfBusinessClassSeats</th>
+        <th scope="col">noOfNonBusinessClassSeats</th> -->
+        <th scope="col">cost</th>
+        <th scope="col">Status</th>
+        <th scope="col">action</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let f of flightDetails">
+
+        <td> </td>
+        <td>{{f.flightNo}}</td>
+        <td>{{f.airline}}</td>
+        <td>{{f.fromPlace}}</td>
+        <td>{{f.toPlace}}</td>
+        <td>{{f.startDate | date:'shortDate'}}</td>
+        <td>{{f.endDate | date:'shortDate'}}</td>
+        <td>{{f.scheduledDays}}</td>
+        <td>{{f.instrument}}</td>
+        <!-- <td>{{f.noOfBusinessClassSeats}}</td>
+        <td>{{f.noOfNonBusinessClassSeats}}</td> -->
+        <td>{{f.cost}}</td>
+        <td>{{f.blockedFlight}}</td>
+
+        
+        <td *ngIf="f.blockedFlight==false; else abc">
+             <button (click)="block(f.airline)" class="btn btn-success">BLOCK</button><br><br></td>
+      
+        <ng-template #abc>
+            <td> <button (click)="unblock(f.airline)"  class="btn btn-success">UNBLOCK</button><br><br></td>
+        </ng-template> -->
+        
+  
+      </tr>
+    
+    </tbody>
+  </table>
+
+  <button  class="btn btn-success" routerLink="/Admin-Home-Page" routerLinkActive="active">BACK</button><br><br>
+
+</div>

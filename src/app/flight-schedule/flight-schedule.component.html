@@ -1,0 +1,49 @@
+<p>flight-schedule works!</p>
+
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" >Navbar</a>
+    <button  class="btn btn-dark" routerLink="/manage-airlines" routerLinkActive="active">manage-airlines</button>
+    <button  class="btn btn-dark" routerLink="/flight-schedule" routerLinkActive="active">Schedule new airline</button>
+    <button  class="btn btn-danger" routerLink="/login" routerLinkActive="active">Logout</button>
+
+  </nav><br><br><br>
+
+<!-- <button  class="btn btn-success" routerLink="/manage-airlines" routerLinkActive="active">manage-airlines</button><br><br>
+
+<button  class="btn btn-success" routerLink="/flight-schedule" routerLinkActive="active">Schedule new airline</button><br><br> -->
+
+
+
+
+<div class="container">
+
+
+    <input class="form-control form-control-sm" type="text" [(ngModel)]="requestFlightDetails.flightNo"
+        placeholder="flightNo"><br>
+    <input class="form-control form-control-sm" type="text" [(ngModel)]="requestFlightDetails.airline"
+        placeholder="airline"><br>
+    <input class="form-control form-control-sm" type="text" [(ngModel)]="requestFlightDetails.fromPlace"
+        placeholder="fromPlace"><br>
+    <input class="form-control form-control-sm" type="text" [(ngModel)]="requestFlightDetails.toPlace"
+        placeholder="toPlace"><br>
+    <input class="form-control form-control-sm" type="text" [(ngModel)]="requestFlightDetails.startDate"
+        placeholder="startDate"><br>
+    <input class="form-control form-control-sm" type="text" [(ngModel)]="requestFlightDetails.endDate"
+        placeholder="endDate"><br>
+    <input class="form-control form-control-sm" type="text" [(ngModel)]="requestFlightDetails.scheduledDays"
+        placeholder="scheduledDays"><br>
+    <input class="form-control form-control-sm" type="text" [(ngModel)]="requestFlightDetails.instrument"
+        placeholder="instrument"><br>
+    <input class="form-control form-control-sm" type="text" [(ngModel)]="requestFlightDetails.noOfBusinessClassSeats"
+        placeholder="noOfBusinessClassSeats"><br>
+    <input class="form-control form-control-sm" type="text" [(ngModel)]="requestFlightDetails.noOfNonBusinessClassSeats"
+        placeholder="noOfNonBusinessClassSeats"><br>
+    <input class="form-control form-control-sm" type="text" [(ngModel)]="requestFlightDetails.cost"
+        placeholder="cost"><br>
+
+    <button (click)="scheduleFlight()" class="btn btn-success">schedule-flight</button><br><br>
+
+
+
+</div>
+<button class="btn btn-success" routerLink="/Admin-Home-Page" routerLinkActive="active">BACK</button><br><br>

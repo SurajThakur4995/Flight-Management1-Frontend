@@ -1,0 +1,49 @@
+<p>manage-bookings works!</p>
+
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" >Navbar</a>
+  <button  class="btn btn-dark" routerLink="/search-flights" routerLinkActive="active">Search Flights</button>
+  <button  class="btn btn-dark" routerLink="/book-flight" routerLinkActive="active">Book Flight</button>
+  <button  class="btn btn-dark" routerLink="/manage-bookings" routerLinkActive="active">Manage Bookings</button>
+  <button  class="btn btn-danger" routerLink="/login" routerLinkActive="active">Logout</button>
+
+</nav><br><br><br>
+
+<!-- <div *ngFor="let f of data"> -->
+<button (click)="getFlightByEmail(fligtRequest.emailId)" class="btn btn-success">View History</button><br><br>
+{{fligtRequest.emailId}}
+<!-- </div> -->
+<table class="table table-dark">
+    <thead>
+        <tr>
+          
+          
+          <th scope="col">Date</th>
+          <th scope="col">flightId</th>
+          <th scope="col">flightName</th>
+          <th scope="col">flightPrice</th>
+          <th scope="col">EmailId</th>
+          <th scope="col">PNR Number</th>
+          <th scope="col"> </th>
+          <th scope="col"> </th>
+          
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor="let f of data">
+  
+         
+          <td>{{f.date}}</td>
+          <td>{{f.flightId}}</td>
+          <td>{{f.flightName}}</td>
+          <td>{{f.flightPrice}}</td>
+          <td>{{f.emailId}}</td>
+          <td>{{f.pNR_Number}}</td>
+          <td><button  class="btn btn-primary">Download</button></td>
+          <td><button  class="btn btn-primary">Cancel</button></td>
+    
+        </tr>
+      
+      </tbody>
+    
+</table>

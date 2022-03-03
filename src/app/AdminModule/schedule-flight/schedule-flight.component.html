@@ -1,0 +1,28 @@
+<p>schedule-flight works!</p>
+
+
+flightNo:<input [(ngModel)]="requestFlightDetails.flightNo"><br>
+airline:<input [(ngModel)]="requestFlightDetails.airline"><br>
+fromPlace:<input [(ngModel)]="requestFlightDetails.fromPlace"><br>
+toPlace:<input [(ngModel)]="requestFlightDetails.toPlace"><br>
+startDate:<input [(ngModel)]="requestFlightDetails.startDate"><br>
+endDate:<input [(ngModel)]="requestFlightDetails.endDate"><br>
+<!-- <li *ngFor="let s of requestFlightDetails.scheduledDays[0]">
+    scheduledDays:<input [(ngModel)]=s><br>
+</li> -->
+
+scheduledDays:<input [(ngModel)]="requestFlightDetails.scheduledDays"><br>
+instrument:<input [(ngModel)]="requestFlightDetails.instrument"><br>
+noOfBusinessClassSeats:<input [(ngModel)]="requestFlightDetails.noOfBusinessClassSeats"><br>
+noOfNonBusinessClassSeats:<input [(ngModel)]="requestFlightDetails.noOfNonBusinessClassSeats"><br>
+cost:<input [(ngModel)]="requestFlightDetails.cost"><br>
+
+
+<button (click)="scheduleFlight()">schedule-flight</button><br><br>
+
+<button (click)="getAllFlightDetails()">getAllFlightDetails</button><br>
+<ul>
+    <li *ngFor="let f of flightDetails">
+        {{f.airline}}
+    </li>
+</ul>

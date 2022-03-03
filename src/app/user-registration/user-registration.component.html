@@ -1,0 +1,20 @@
+<p>user-registration works!</p>
+
+<div class="container">
+
+
+    <input class="form-control form-control-sm" type="text" [(ngModel)]="userRegitration.name"
+        placeholder="Name"><br>
+    <input class="form-control form-control-sm" type="text" [(ngModel)]="userRegitration.email"
+        placeholder="Email Id"><br>
+    <input class="form-control form-control-sm" type="text" [(ngModel)]="userRegitration.username"
+        placeholder="Username"><br>
+    <input class="form-control form-control-sm" type="text" [(ngModel)]="userRegitration.password"
+        placeholder="Password"><br>
+
+
+    <button (click)="registerUser()" class="btn btn-success"  routerLink="/login" routerLinkActive="active">Register</button><br><br>
+
+
+
+</div>

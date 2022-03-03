@@ -1,0 +1,80 @@
+<p>book-flight works!</p>
+
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" >Navbar</a>
+  <button  class="btn btn-dark" routerLink="/search-flights" routerLinkActive="active">Search Flights</button>
+  <button  class="btn btn-dark" routerLink="/book-flight" routerLinkActive="active">Book Flight</button>
+  <button  class="btn btn-dark" routerLink="/manage-bookings" routerLinkActive="active">Manage Bookings</button>
+  <button  class="btn btn-danger" routerLink="/login" routerLinkActive="active">Logout</button>
+
+</nav><br><br><br>
+
+
+<!-- <div class="container">
+
+
+   
+    <input class="form-control form-control-sm" type="text" [(ngModel)]="flightData.flightId" placeholder="flightId"><br>
+    <input class="form-control form-control-sm" type="text" [(ngModel)]="flightRequest.name" placeholder="name"><br>
+    <input class="form-control form-control-sm" type="text" [(ngModel)]="flightRequest.emailId" placeholder="emailId"><br>
+    <input class="form-control form-control-sm" type="text" [(ngModel)]="flightRequest.passengers" placeholder="passengers"><br>
+    <input class="form-control form-control-sm" type="text" [(ngModel)]="flightRequest.noOfPassenger" placeholder="noOfPassenger"><br> -->
+    <!-- <input class="form-control form-control-sm" type="text" [(ngModel)]="flightRequest.typeOfMeal" placeholder="endDate"><br> -->
+    
+    <!-- <button (click)="bookFlight(flightData.flightId)" class="btn btn-success">schedule-flight</button><br><br>
+
+   
+
+</div> -->
+
+
+<div class="container">
+<form [formGroup]="flightRequestGroup" (ngSubmit)="bookFlight(flightData.flightId)">
+
+    <!-- <input type="text" class="form-control" [(ngModel)]="flightData.flightId" formControlName="flightId" placeholder="flightId"><br>
+    <input type="text" class="form-control" [(ngModel)]="flightRequest.name" formControlName="name" placeholder=" name"><br>
+    <input type="text" class="form-control" [(ngModel)]="flightRequest.emailId" formControlName="emailId" placeholder="emailId"><br>
+    <input type="text" class="form-control" [(ngModel)]="flightRequest.noOfPassenger" formControlName="noOfPassenger" placeholder="noOfPassenger"><br> -->
+    
+    <input type="hidden" class="form-control" [(ngModel)]="flightData.flightId" formControlName="flightId" placeholder="flightId"><br>
+    <input type="text" class="form-control"  formControlName="name"  placeholder=" name"><br>
+    <input type="text" class="form-control"  formControlName="emailId" [(ngModel)]="flightRequest.emailId" placeholder="emailId"><br>
+    <input type="text" class="form-control"  formControlName="noOfPassenger" placeholder="noOfPassenger"><br>
+    
+    
+    <div formArrayName="passengers" >
+
+        <div *ngFor="let group of getPassengersArray.controls; let i=index" [formGroupName]="i">
+          <div class="form-group">
+            <!-- <label for="inputAddress">GUARANTORS ID</label> -->
+          
+ 
+            <!-- <input type="text" class="form-control" [(ngModel)]="passengerDetails.emailId" formControlName="id" placeholder="id"><br>
+            <input type="text" class="form-control" [(ngModel)]="passengerDetails.emailId" formControlName="firstName" placeholder=" firstName"><br>
+            <input type="text" class="form-control" [(ngModel)]="passengerDetails.emailId" formControlName="lastName" placeholder="lastName"><br>
+            <input type="text" class="form-control" [(ngModel)]="passengerDetails.emailId" formControlName="gender" placeholder="gender"><br>
+            <input type="text" class="form-control" [(ngModel)]="passengerDetails.emailId" formControlName="age" placeholder="age"><br>
+            <input type="text" class="form-control" [(ngModel)]="flightRequest.emailId" formControlName="seatNo" placeholder="seatNo"><br> -->
+  
+
+            <!-- <input type="text" class="form-control"  formControlName="id" placeholder="id"><br> -->
+            <input type="text" class="form-control" formControlName="firstName" placeholder=" firstName"><br>
+            <input type="text" class="form-control" formControlName="lastName" placeholder="lastName"><br>
+            <input type="text" class="form-control" formControlName="gender" placeholder="gender"><br>
+            <input type="text" class="form-control" formControlName="age" placeholder="age"><br>
+            <input type="text" class="form-control" formControlName="seatNo" placeholder="seatNo"><br>
+            <div class="buttons">
+              <button type="button" class="btn btn-primary btn-sm" (click)="addPassenger()">ADD PASSENGER</button>
+              <button type="button" class="btn btn-primary btn-sm" (click)="removePassenger(i)">REMOVE PASSENGER</button><br>
+            </div><br>
+        </div>
+       
+      </div>
+     
+      </div>
+      <div class="buttons">
+      <button type="submit" class="btn btn-success" value="submit" >Book Flight</button><br>
+      <button  routerLink="/manage-bookings" [state]="flightRequest" >Go To Manage Bookings</button>
+    </div>
+</form>
+</div>
